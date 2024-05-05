@@ -582,8 +582,7 @@ fn main() -> std::io::Result<()> {
         // 对原始迭代器中的每个字符串切片 s 应用 split_whitespace() 方法来分割字符串，
         // 然后使用 collect::<Vec<_>>() 将分割后的单词收集到一个 Vec（向量）中。
         // 最终结果是一个新的迭代器，迭代器中的每个元素都是一个包含单词的 Vec。
-        .map(|s|
-            s.split_whitespace().collect::<Vec<_>>())
+        .map(|s| s.split_whitespace().collect::<Vec<_>>())
         // 对迭代器中的每个元素 s 进行判断，
         // 如果 s 不是一个空行且不是以 "--" 开头的注释行，则保留该元素；否则，过滤掉该元素。
         .filter(|s| !matches!(s.as_slice(), [] | ["--", ..]))

@@ -1,6 +1,6 @@
 # TinyVM
 
-**English** | [简体中文](Docs/README_zh.md)
+**English** | [简体中文](Docs/README_zh.md) | [Learning](Docs/Learning.md)
 
 An MVP stack-based bytecode VM
 

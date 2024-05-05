@@ -1,6 +1,6 @@
 # TinyVM
 
-[English](../README.md) | **简体中文**
+[English](../README.md) | **简体中文** ｜ [学习](Learning.md)
 
 一个基于MVP的栈式字节码虚拟机
 
