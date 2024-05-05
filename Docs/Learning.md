@@ -82,6 +82,138 @@
 - 推荐：[Rust语言圣经](https://course.rs/basic/intro.html)
 - 
 
+## 变量
+
+```rust
+fn main() {
+   let x = 10; // x 是不可重复赋值的
+   x = 20; // error
+   let mut y = 10; // x 可以重复赋值，mut 表示可以更改
+   y = 20; // success
+}
+```
+
+```rust
+fn main() {
+    // 字符串类型
+    let spaces = "   ";
+    // usize数值类型
+    let spaces = spaces.len();
+}
+```
+
+这种结构是允许的，因为第一个 spaces 变量是一个字符串类型，第二个 spaces 变量是一个全新的变量且和第一个具有相同的变量名，且是一个数值类型。
+
+所以变量遮蔽可以帮我们节省些脑细胞，不用去想如 spaces_str 和 spaces_num 此类的变量名；相反我们可以重复使用更简单的 spaces 变量名。
+
+如果你用 let mut :
+
+```rust
+fn main(){
+   let mut spaces = "   ";
+   spaces = spaces.len();
+}
+
+// 编译错误
+// spaces = spaces.len();
+//          ^^^^^^^^^^^^ expected `&str`, found `usize`
+```
+
+mut 只是可以修改值，而不能修改类型。
+
+
+变量不使用会出现警告，可以使用 `_` 忽略它
+
+```rust
+fn main() {
+   let _x = 5; // 不会警告“未使用”  
+   let y = 10; // 警告“未使用”
+}
+```
+
+解构：多个变量赋值
+
+```rust
+fn main() {
+   let (a, mut b): (bool,bool) = (true, false);
+   // 定义的变量：
+   // a = true,不可变; 
+   // b = false，可变
+   println!("a = {:?}, b = {:?}", a, b);
+
+   b = true;
+   assert_eq!(a, b);
+}
+```
+
+关于 `:?`
+
+```rust
+use std::fmt;
+
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+impl fmt::Debug for Point {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "Debug: Point(x: {}, y: {})", self.x, self.y)
+    }
+}
+
+impl fmt::Display for Point {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "Display: Point({}, {})", self.x, self.y)
+    }
+}
+
+fn main() {
+    let point = Point { x: 10, y: 20 };
+    println!("a = {:?}, b = {:?}", point, point); // 使用 Debug 格式化
+    println!("a = {}, b = {}", point, point);    // 使用 Display 格式化
+}
+
+// a = Debug: Point(x: 10, y: 20), b = Debug: Point(x: 10, y: 20)
+// a = Display: Point(10, 20), b = Display: Point(10, 20)
+```
+
+
+常量
+
+```rust
+// #![allow(unused)] 放在代码文件的顶部，表示对整个 crate（Rust 项目的模块化单元）启用 unused 属性。
+// 这意味着编译器将不会对整个 crate 中的未使用项发出警告。
+#![allow(unused)] // 如果没有 #![allow(unused)] 属性宏，编译器会发出警告，因为常量 MAX_POINTS 被声明了但没有在代码中使用。
+fn main() {
+   const MAX_POINTS: u32 = 100_000;
+}
+```
+
+作用域：变量屏蔽
+
+```rust
+fn main() {
+   let x = 5;
+   // 在main函数的作用域内对之前的x进行遮蔽
+   let x = x + 1;
+
+   {
+      // 在当前的花括号作用域内，对之前的x进行遮蔽
+      let x = x * 2;
+      println!("The value of x in the inner scope is: {}", x);
+   }
+
+   println!("The value of x is: {}", x);
+}
+
+// The value of x in the inner scope is: 12
+// The value of x is: 6
+```
+
+这和 mut 变量的使用是不同的，第二个 let 生成了完全不同的新变量，两个变量只是恰好拥有同样的名称，涉及一次内存对象的再分配。
+
+而 mut 声明的变量，可以修改同一个内存地址上的值，并不会发生内存对象的再分配，性能要更好。
 
 
 
