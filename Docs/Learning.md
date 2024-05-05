@@ -1,6 +1,15 @@
+<a name="readme-top"/>
+
 # Tiny VM
 
 [English](../README.md) | [简体中文](README_zh.md) | **学习**
+
+<details>
+<summary><kbd>目录</kbd></summary>
+
+</details>
+
+
 
 # 一、配置
 1. **安装 Rust**（如果你还没有安装）：
@@ -318,3 +327,15 @@ let lines_and_words: Vec<Vec<&str>> = text
 ```
 
 在这个例子中，`lines_and_words` 将是一个包含每一行单词向量的向量。
+
+
+# 基本类型
+
+- 数值类型: 有符号整数 (i8, i16, i32, i64, isize)、 无符号整数 (u8, u16, u32, u64, usize) 、浮点数 (f32, f64)、以及有理数、复数
+- 字符串：字符串字面量和字符串切片 &str
+- 布尔类型： true和false
+- 字符类型: 表示单个 Unicode 字符，存储为 4 个字节
+- 单元类型: 即 () ，其唯一的值也是 ()
+<div align="right">
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+</div>
