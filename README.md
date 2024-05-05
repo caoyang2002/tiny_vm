@@ -1,5 +1,7 @@
 # TinyVM
 
+**English** | [简体中文](Docs/README_zh.md)
+
 An MVP stack-based bytecode VM
 
 This VM runs a simplistic, Turing complete instruction set.

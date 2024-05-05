@@ -1,5 +1,7 @@
 # TinyVM
 
+[English](../README.md) | **简体中文**
+
 一个基于MVP的栈式字节码虚拟机
 
 这个虚拟机运行一个简单、图灵完备的指令集。
@@ -82,9 +84,9 @@ Print
 Push 10
 PrintC
 ```
+## 运行
+```bash
+cargo run --release sum.bytecode
 
-```
-> cargo run --release sum.bytecode
-4950
->
+# 4950
 ```
