@@ -7,6 +7,11 @@
 <details>
 <summary><kbd>目录</kbd></summary>
 
+- [一、配置](#一配置)
+- [二、基础语法](#二基础语法)
+- [三、进阶语法](#三进阶语法)
+- [四、源码解析](#四源码解析)
+
 </details>
 
 
@@ -301,7 +306,7 @@ let sum = |x: i32, y: i32| -> i32 {
 
 
 
-# 源码解析
+# 四、源码解析
 
 ```rust
 |s| s.split_whitespace().collect::<Vec<_>>()
@@ -329,13 +334,17 @@ let lines_and_words: Vec<Vec<&str>> = text
 在这个例子中，`lines_and_words` 将是一个包含每一行单词向量的向量。
 
 
-# 基本类型
+# 五、附录
+
+## 1. 基本类型
 
 - 数值类型: 有符号整数 (i8, i16, i32, i64, isize)、 无符号整数 (u8, u16, u32, u64, usize) 、浮点数 (f32, f64)、以及有理数、复数
 - 字符串：字符串字面量和字符串切片 &str
 - 布尔类型： true和false
 - 字符类型: 表示单个 Unicode 字符，存储为 4 个字节
 - 单元类型: 即 () ，其唯一的值也是 ()
+
+
 
 
 <div align="right">
