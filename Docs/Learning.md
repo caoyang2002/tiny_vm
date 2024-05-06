@@ -4,19 +4,29 @@
 
 [English](../README.md) | [简体中文](README_zh.md) | **学习**
 
+目录
 <details>
-<summary><kbd>目录</kbd></summary>
+<summary><kbd>展开</kbd></summary>
+
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&exclude_repo=github-readme-stats,anuraghazra.github.io)
 
 - [一、配置](#一配置)
 - [二、基础语法](#二基础语法)
 - [三、进阶语法](#三进阶语法)
 - [四、源码解析](#四源码解析)
+- [附录-基本类型](1-基本类型)
 
 </details>
 
-
-
 # 一、配置
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 1. **安装 Rust**（如果你还没有安装）：
    Rust 提供了一个包管理器和构建工具，称为 Cargo。你可以从 Rust 官方网站获取安装指南：[https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)。
 
@@ -90,6 +100,12 @@
 
 
 # 二、基础语法
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
 
 参考
 
@@ -234,6 +250,12 @@ fn main() {
 
 # 三、进阶语法
 
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## 闭包
 参考
 - [知乎参考](https://zhuanlan.zhihu.com/p/75429819)
@@ -307,6 +329,12 @@ let sum = |x: i32, y: i32| -> i32 {
 
 
 # 四、源码解析
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
 
 ```rust
 |s| s.split_whitespace().collect::<Vec<_>>()
